@@ -1,6 +1,6 @@
 <?php
-/* @var $this RegionController */
-/* @var $model Region */
+/* @var $this ActionController */
+/* @var $model Action */
 /* @var $form CActiveForm */
 ?>
 
@@ -17,13 +17,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'region'); ?>
-		<?php echo $form->textField($model,'region',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->label($model,'name'); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>128)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'code'); ?>
-		<?php echo $form->textField($model,'code'); ?>
+		<?php echo $form->label($model,'description'); ?>
+		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row buttons">

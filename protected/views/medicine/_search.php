@@ -1,6 +1,6 @@
 <?php
-/* @var $this EmployeeController */
-/* @var $model Employee */
+/* @var $this MedicineController */
+/* @var $model Medicine */
 /* @var $form CActiveForm */
 ?>
 
@@ -22,28 +22,28 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'position'); ?>
-		<?php echo $form->textField($model,'position',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->label($model,'description'); ?>
+		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'region_id'); ?>
-		<?php echo $form->textField($model,'region_id'); ?>
+		<?php echo $form->label($model,'price'); ?>
+		<?php echo $form->textField($model,'price',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->label($model,'stock'); ?>
+		<?php echo $form->textField($model,'stock'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'phone'); ?>
-		<?php echo $form->textField($model,'phone',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->label($model,'created_at'); ?>
+		<?php echo $form->textField($model,'created_at'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'hire_date'); ?>
-		<?php echo $form->textField($model,'hire_date'); ?>
+		<?php echo $form->label($model,'updated_at'); ?>
+		<?php echo $form->textField($model,'updated_at'); ?>
 	</div>
 
 	<div class="row buttons">

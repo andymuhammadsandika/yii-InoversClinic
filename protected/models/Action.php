@@ -1,26 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "tbl_region".
+ * This is the model class for table "tbl_action".
  *
- * The followings are the available columns in table 'tbl_region':
+ * The followings are the available columns in table 'tbl_action':
  * @property integer $id
- * @property string $region
- * @property integer $code
- * @property string $created_at
- * @property string $updated_at
- *
- * The followings are the available model relations:
- * @property Employee[] $employees
+ * @property string $name
+ * @property string $description
  */
-class Region extends CActiveRecord
+class Action extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'tbl_region';
+		return 'tbl_action';
 	}
 
 	/**
@@ -31,12 +26,12 @@ class Region extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('region, code', 'required'),
-			array('code', 'numerical', 'integerOnly'=>true),
-			array('region', 'length', 'max'=>128),
+			array('name', 'required'),
+			array('name', 'length', 'max'=>128),
+			array('description', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, region, code, created_at, updated_at', 'safe', 'on'=>'search'),
+			array('id, name, description', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,7 +43,6 @@ class Region extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'employees' => array(self::HAS_MANY, 'Employee', 'region_id'),
 		);
 	}
 
@@ -59,10 +53,8 @@ class Region extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'region' => 'Region',
-			'code' => 'Code',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
+			'name' => 'Name',
+			'description' => 'Description',
 		);
 	}
 
@@ -85,10 +77,8 @@ class Region extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('region',$this->region,true);
-		$criteria->compare('code',$this->code);
-		$criteria->compare('created_at',$this->created_at,true);
-		$criteria->compare('updated_at',$this->updated_at,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('description',$this->description,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -99,7 +89,7 @@ class Region extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Region the static model class
+	 * @return Action the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

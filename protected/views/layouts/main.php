@@ -35,6 +35,8 @@
 				array('label'=>'Pengguna', 'url'=>array('/user', 'view'=>'index'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Pegawai', 'url'=>array('/employee', 'view'=>'index'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Wilayah', 'url'=>array('/region', 'view'=>'index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Tindakan', 'url'=>array('/action', 'view'=>'index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Obat', 'url'=>array('/medicine', 'view'=>'index'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
