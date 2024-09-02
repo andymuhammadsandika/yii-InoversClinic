@@ -12,7 +12,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Regions</h1>
+<h1>Wilayah</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
